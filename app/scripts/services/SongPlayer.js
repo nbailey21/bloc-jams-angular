@@ -57,6 +57,11 @@
 
     SongPlayer.currentTime = null;
 
+    // @desc Current volume
+    // @type {Number}
+
+    SongPlayer.volume = 70;
+
     // @method SongPlayer.play
     // @desc Sets song and plays song, if song is paused, then plays song
     // @param {object} song
@@ -120,6 +125,12 @@
         currentBuzzObject.setTime(time);
       }
     };
+
+    SongPlayer.setVolume = function(volume) {
+      if (currentBuzzObject) {
+        currentBuzzObject.setVolume(volume);
+      }
+    }
 
     return SongPlayer;
   }
